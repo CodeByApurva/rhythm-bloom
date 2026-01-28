@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Rhythm Wellness App Design System
+   Soft, calming grey-green aesthetic
+   Mindfulness and wellness inspired
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Core backgrounds - soft warm beige/cream */
+    --background: 40 30% 97%;
+    --foreground: 150 15% 20%;
+
+    /* Cards with soft sage undertones */
+    --card: 45 25% 96%;
+    --card-foreground: 150 15% 20%;
+
+    /* Popovers */
+    --popover: 45 25% 96%;
+    --popover-foreground: 150 15% 20%;
+
+    /* Primary - muted sage green */
+    --primary: 145 25% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - soft grey-green */
+    --secondary: 150 15% 88%;
+    --secondary-foreground: 150 20% 30%;
+
+    /* Muted - warm neutral with green undertone */
+    --muted: 45 15% 92%;
+    --muted-foreground: 150 10% 45%;
+
+    /* Accent - soft eucalyptus */
+    --accent: 160 20% 85%;
+    --accent-foreground: 160 25% 25%;
+
+    /* Destructive - muted coral (not harsh red) */
+    --destructive: 15 50% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 150 15% 85%;
+    --input: 150 15% 85%;
+    --ring: 145 25% 55%;
+
+    --radius: 1rem;
+
+    /* Custom tokens for Rhythm */
+    --rhythm-sage: 145 25% 55%;
+    --rhythm-sage-light: 145 20% 90%;
+    --rhythm-sage-dark: 145 30% 40%;
+    --rhythm-grey-green: 150 15% 65%;
+    --rhythm-grey-green-light: 150 12% 92%;
+    --rhythm-eucalyptus: 160 25% 60%;
+    --rhythm-eucalyptus-light: 160 20% 92%;
+    --rhythm-cream: 40 30% 96%;
+    --rhythm-beige: 35 25% 90%;
+    --rhythm-warm-grey: 30 10% 85%;
+    --rhythm-moss: 140 20% 45%;
+    --rhythm-seafoam: 165 30% 75%;
+    
+    /* Gradients - soft and calming */
+    --gradient-primary: linear-gradient(135deg, hsl(145 25% 55%) 0%, hsl(160 25% 60%) 100%);
+    --gradient-calm: linear-gradient(135deg, hsl(150 15% 88%) 0%, hsl(160 20% 85%) 100%);
+    --gradient-nature: linear-gradient(135deg, hsl(145 20% 70%) 0%, hsl(165 25% 75%) 100%);
+    --gradient-morning: linear-gradient(135deg, hsl(40 30% 95%) 0%, hsl(150 15% 90%) 100%);
+    --gradient-forest: linear-gradient(135deg, hsl(140 25% 50%) 0%, hsl(155 20% 45%) 100%);
+
+    /* Shadows - subtle and soft */
+    --shadow-soft: 0 4px 20px -4px hsl(145 25% 55% / 0.12);
+    --shadow-card: 0 2px 12px -2px hsl(150 15% 20% / 0.06);
+    --shadow-elevated: 0 8px 30px -8px hsl(150 15% 20% / 0.10);
+
+    /* Sidebar */
+    --sidebar-background: 45 20% 97%;
+    --sidebar-foreground: 150 15% 25%;
+    --sidebar-primary: 145 25% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 20% 90%;
+    --sidebar-accent-foreground: 160 25% 25%;
+    --sidebar-border: 150 15% 88%;
+    --sidebar-ring: 145 25% 55%;
+  }
+
+  .dark {
+    --background: 150 15% 8%;
+    --foreground: 45 25% 95%;
+
+    --card: 150 12% 12%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 150 12% 12%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 145 30% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 15% 18%;
+    --secondary-foreground: 150 20% 85%;
+
+    --muted: 150 12% 18%;
+    --muted-foreground: 45 15% 65%;
+
+    --accent: 160 20% 22%;
+    --accent-foreground: 160 25% 90%;
+
+    --destructive: 15 45% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 12% 20%;
+    --input: 150 12% 20%;
+    --ring: 145 30% 50%;
+
+    --sidebar-background: 150 12% 10%;
+    --sidebar-foreground: 45 20% 90%;
+    --sidebar-primary: 145 30% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 18% 18%;
+    --sidebar-accent-foreground: 160 25% 85%;
+    --sidebar-border: 150 12% 18%;
+    --sidebar-ring: 145 30% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .rhythm-card {
+    @apply rounded-2xl bg-card p-6 shadow-sm border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .rhythm-card-elevated {
+    @apply rounded-2xl bg-card p-6;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .rhythm-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .rhythm-gradient-calm {
+    background: var(--gradient-calm);
+  }
+
+  .rhythm-gradient-nature {
+    background: var(--gradient-nature);
+  }
+
+  .rhythm-gradient-morning {
+    background: var(--gradient-morning);
+  }
+
+  .rhythm-gradient-forest {
+    background: var(--gradient-forest);
+  }
+
+  .rhythm-glow {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .rhythm-breathing {
+    animation: breathing 4s ease-in-out infinite;
+  }
+
+  .rhythm-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .rhythm-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  /* Safe area for mobile devices */
+  .safe-area-pb {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-area-pt {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fade-in 0.5s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.5s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fade-in 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
